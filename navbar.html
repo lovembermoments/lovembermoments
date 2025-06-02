@@ -107,3 +107,19 @@
   </div>
 </div>
 <!-- Navbar End -->
+<script>
+  // Ambil path file halaman sekarang, misal 'event.html'
+  const currentPage = window.location.pathname.split("/").pop();
+
+  // Ambil semua link navbar
+  const navLinks = document.querySelectorAll(".nav-item.nav-link");
+
+  navLinks.forEach(link => {
+    // Cek apakah href sama dengan halaman sekarang
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+</script>
