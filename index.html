@@ -57,6 +57,23 @@
           document.getElementById("navbar-container").innerHTML = data;
         })
         .catch((error) => console.error("Error loading navbar:", error));
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const currentPath = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+        navLinks.forEach(function (link) {
+          const linkPath = link.getAttribute("href");
+          if (
+            linkPath === currentPath ||
+            (currentPath === "" && linkPath === "index.html")
+          ) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      });
     </script>
     <!-- Navbar End -->
 
@@ -148,48 +165,51 @@
             <h4
               class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius"
             >
-              About Us
+              Tentang Lovembermoments
             </h4>
             <h1 class="text-dark mb-4 display-5">
-              We Learn Smart Way To Build Bright Futute For Your Children
+              Mengabadikan Awal yang Indah dari Buah Hati Anda
             </h1>
             <p class="text-dark mb-4">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. the printing and typesetting industry. Lorem Ipsum has
-              been the industry's standard dummy text ever since the 1500s, when
-              an unknown printer Lorem Ipsum has been the industry's standard
-              dummy text ever since the 1500s.
+              Lovembermoments adalah brand fotografi khusus bayi baru lahir yang
+              hadir untuk mengabadikan setiap detik berharga di hari-hari
+              pertama sang buah hati. Dengan pencahayaan lembut, konsep yang
+              hangat, dan pendekatan penuh kasih, kami menciptakan kenangan
+              abadi yang penuh makna.
             </p>
             <div class="row mb-4">
               <div class="col-lg-6">
                 <h6 class="mb-3">
-                  <i class="fas fa-check-circle me-2"></i>Sport Activites
+                  <i class="fas fa-check-circle me-2 text-primary"></i
+                  >Fotografer Bayi Profesional
                 </h6>
                 <h6 class="mb-3">
-                  <i class="fas fa-check-circle me-2 text-primary"></i>Outdoor
-                  Games
+                  <i class="fas fa-check-circle me-2 text-secondary"></i>Studio
+                  Nyaman & Aman
                 </h6>
                 <h6 class="mb-3">
-                  <i class="fas fa-check-circle me-2 text-secondary"></i
-                  >Nutritious Foods
+                  <i class="fas fa-check-circle me-2"></i>Tema Unik & Kreatif
                 </h6>
               </div>
               <div class="col-lg-6">
                 <h6 class="mb-3">
-                  <i class="fas fa-check-circle me-2"></i>Highly Secured
+                  <i class="fas fa-check-circle me-2 text-primary"></i>Cetak &
+                  Album Berkualitas Tinggi
                 </h6>
                 <h6 class="mb-3">
-                  <i class="fas fa-check-circle me-2 text-primary"></i>Friendly
-                  Environment
+                  <i class="fas fa-check-circle me-2 text-secondary"></i
+                  >Penanganan Bayi yang Lembut & Sabar
                 </h6>
                 <h6>
-                  <i class="fas fa-check-circle me-2 text-secondary"></i
-                  >Qualified Teacher
+                  <i class="fas fa-check-circle me-2"></i>Konsultasi & Booking
+                  Gratis
                 </h6>
               </div>
             </div>
-            <a href="" class="btn btn-primary px-5 py-3 btn-border-radius"
-              >More Details</a
+            <a
+              href="gallery.html"
+              class="btn btn-primary px-5 py-3 btn-border-radius"
+              >Lihat Galeri Newborn</a
             >
           </div>
         </div>

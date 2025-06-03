@@ -108,18 +108,19 @@
 </div>
 <!-- Navbar End -->
 <script>
-  // Ambil path file halaman sekarang, misal 'event.html'
-  const currentPage = window.location.pathname.split("/").pop();
+  console.log("Script jalan");
+  document.addEventListener("DOMContentLoaded", function () {
+    const currentPath = window.location.pathname.split("/").pop();
+    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
 
-  // Ambil semua link navbar
-  const navLinks = document.querySelectorAll(".nav-item.nav-link");
-
-  navLinks.forEach(link => {
-    // Cek apakah href sama dengan halaman sekarang
-    if (link.getAttribute("href") === currentPage) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
+    navLinks.forEach(function (link) {
+      const linkPath = link.getAttribute("href");
+      if (linkPath === currentPath || (currentPath === "" && linkPath === "index.html")) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
   });
 </script>
+

@@ -57,6 +57,23 @@
           document.getElementById("navbar-container").innerHTML = data;
         })
         .catch((error) => console.error("Error loading navbar:", error));
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const currentPath = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+        navLinks.forEach(function (link) {
+          const linkPath = link.getAttribute("href");
+          if (
+            linkPath === currentPath ||
+            (currentPath === "" && linkPath === "event.html")
+          ) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      });
     </script>
 
     <!-- Navbar End -->
