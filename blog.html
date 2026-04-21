@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="utf-8" />
-    <title>BabyCare - Daycare Website Template</title>
+    <title>Lovember Moments | Tambahan Layanan</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
-    <meta content="" name="description" />
+    <meta content="Tambahan layanan Lovember Moments seperti tema ekstra, cetak foto, album, dan file tambahan untuk sesi newborn." name="description" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -47,33 +47,48 @@
     </div>
     <!-- Spinner End -->
 
-    <!-- Navbar start -->
+        <!-- Navbar start -->
     <div id="navbar-container"></div>
     <script>
-      // Load navbar from external file
-      fetch("navbar.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("navbar-container").innerHTML = data;
-        })
-        .catch((error) => console.error("Error loading navbar:", error));
-
-      document.addEventListener("DOMContentLoaded", function () {
-        const currentPath = window.location.pathname.split("/").pop();
-        const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+      function setActiveNav() {
+        const currentPath =
+          window.location.pathname.split("/").pop() || "index.html";
+        const navLinks = document.querySelectorAll(
+          ".navbar-nav .nav-link, .navbar-nav .dropdown-item"
+        );
 
         navLinks.forEach(function (link) {
           const linkPath = link.getAttribute("href");
-          if (
-            linkPath === currentPath ||
-            (currentPath === "" && linkPath === "blog.html")
-          ) {
+          if (linkPath === currentPath) {
             link.classList.add("active");
           } else {
             link.classList.remove("active");
           }
         });
-      });
+
+        const activeDropdownItem = document.querySelector(
+          ".navbar-nav .dropdown-item.active"
+        );
+        const dropdownToggle = document.querySelector(
+          ".navbar-nav .dropdown-toggle"
+        );
+
+        if (dropdownToggle) {
+          dropdownToggle.classList.remove("active");
+        }
+
+        if (activeDropdownItem && dropdownToggle) {
+          dropdownToggle.classList.add("active");
+        }
+      }
+
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar-container").innerHTML = data;
+          setActiveNav();
+        })
+        .catch((error) => console.error("Error loading navbar:", error));
     </script>
     <!-- Navbar End -->
 
@@ -89,7 +104,7 @@
         <div class="modal-content rounded-0">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">
-              Search by keyword
+              Cari halaman
             </h5>
             <button
               type="button"
@@ -103,7 +118,7 @@
               <input
                 type="search"
                 class="form-control p-3"
-                placeholder="keywords"
+                placeholder="Ketik kata kunci"
                 aria-describedby="search-icon-1"
               />
               <span id="search-icon-1" class="input-group-text p-3"
@@ -122,13 +137,12 @@
       data-wow-delay="0.1s"
     >
       <div class="container text-center py-5">
-        <h1 class="display-2 text-white mb-4">Our Blog</h1>
+        <h1 class="display-2 text-white mb-4">Tambahan Layanan</h1>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-center mb-0">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
             <li class="breadcrumb-item text-white" aria-current="page">
-              Our Blog
+              Tambahan Layanan
             </li>
           </ol>
         </nav>
@@ -136,232 +150,39 @@
     </div>
     <!-- Page Header End -->
 
-    <!-- Blog Start-->
-    <div class="container-fluid blog py-5">
+        <!-- Blog Start-->
+    <div class="container-fluid blog py-5" id="layanan-tambahan">
       <div class="container py-5">
-        <div
-          class="mx-auto text-center wow fadeIn"
-          data-wow-delay="0.1s"
-          style="max-width: 600px"
-        >
-          <h4
-            class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius"
-          >
-            Latest News & Blog
-          </h4>
-          <h1 class="mb-5 display-3">Read Our Latest News & Blog</h1>
+        <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px">
+          <h4 class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius">Tambahan</h4>
+          <h1 class="mb-5 display-3">Tambahan layanan untuk melengkapi sesi home visit</h1>
         </div>
         <div class="row g-5 justify-content-center">
-          <div
-            class="col-md-6 col-lg-6 col-xl-4 wow fadeIn"
-            data-wow-delay="0.1s"
-          >
-            <div class="blog-item rounded-bottom">
-              <div
-                class="blog-img overflow-hidden position-relative img-border-radius"
-              >
-                <img src="img/blog-1.jpg" class="img-fluid w-100" alt="Image" />
-              </div>
-              <div
-                class="d-flex justify-content-between px-4 py-3 bg-light border-bottom border-primary blog-date-comments"
-              >
-                <small class="text-dark"
-                  ><i class="fas fa-calendar me-1 text-dark"></i> 29 Nov
-                  2023</small
-                >
-                <small class="text-dark"
-                  ><i class="fas fa-comment-alt me-1 text-dark"></i> Comments
-                  (15)</small
-                >
-              </div>
-              <div
-                class="blog-content d-flex align-items-center px-4 py-3 bg-light"
-              >
-                <div
-                  class="overflow-hidden rounded-circle rounded-top border border-primary"
-                >
-                  <img
-                    src="img/program-teacher.jpg"
-                    class="img-fluid rounded-circle p-2 rounded-top"
-                    alt="Image"
-                    style="
-                      width: 70px;
-                      height: 70px;
-                      border-style: dotted;
-                      border-color: var(--bs-primary) !important;
-                    "
-                  />
-                </div>
-                <div class="ms-3">
-                  <h6 class="text-primary">Mary Mordern</h6>
-                  <p class="text-muted">Baby Care</p>
-                </div>
-              </div>
-              <div class="px-4 pb-4 bg-light rounded-bottom">
-                <div class="blog-text-inner">
-                  <a href="#" class="h4">How to pay attention to your child?</a>
-                  <p class="mt-3 mb-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Donec sed purus
-                  </p>
-                </div>
-                <div class="text-center">
-                  <a
-                    href="#"
-                    class="btn btn-primary text-white px-4 py-2 mb-3 btn-border-radius"
-                    >View Details</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-6 col-lg-6 col-xl-4 wow fadeIn"
-            data-wow-delay="0.3s"
-          >
-            <div class="blog-item rounded-bottom">
-              <div
-                class="blog-img overflow-hidden position-relative img-border-radius"
-              >
-                <img src="img/blog-2.jpg" class="img-fluid w-100" alt="Image" />
-              </div>
-              <div
-                class="d-flex justify-content-between px-4 py-3 bg-light border-bottom border-primary blog-date-comments"
-              >
-                <small class="text-dark"
-                  ><i class="fas fa-calendar me-1 text-dark"></i> 29 Nov
-                  2023</small
-                >
-                <small class="text-dark"
-                  ><i class="fas fa-comment-alt me-1 text-dark"></i> Comments
-                  (15)</small
-                >
-              </div>
-              <div
-                class="blog-content d-flex align-items-center px-4 py-3 bg-light"
-              >
-                <div
-                  class="overflow-hidden rounded-circle rounded-top border border-primary"
-                >
-                  <img
-                    src="img/program-teacher.jpg"
-                    class="img-fluid rounded-circle p-2 rounded-top"
-                    alt=""
-                    style="
-                      width: 70px;
-                      height: 70px;
-                      border-style: dotted;
-                      border-color: var(--bs-primary) !important;
-                    "
-                  />
-                </div>
-                <div class="ms-3">
-                  <h6 class="text-primary">Mary Mordern</h6>
-                  <p class="text-muted">Baby Care</p>
-                </div>
-              </div>
-              <div class="px-4 pb-4 bg-light rounded-bottom">
-                <div class="blog-text-inner">
-                  <a href="#" class="h4">Play outdoor sports with your child</a>
-                  <p class="mt-3 mb-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Donec sed purus
-                  </p>
-                </div>
-                <div class="text-center">
-                  <a
-                    href="#"
-                    class="btn btn-primary text-white px-4 py-2 mb-3 btn-border-radius"
-                    >View Details</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-6 col-lg-6 col-xl-4 wow fadeIn"
-            data-wow-delay="0.5s"
-          >
-            <div class="blog-item rounded-bottom">
-              <div
-                class="blog-img overflow-hidden position-relative img-border-radius"
-              >
-                <img src="img/blog-3.jpg" class="img-fluid w-100" alt="Image" />
-              </div>
-              <div
-                class="d-flex justify-content-between px-4 py-3 bg-light border-bottom border-primary blog-date-comments"
-              >
-                <small class="text-dark"
-                  ><i class="fas fa-calendar me-1 text-dark"></i> 29 Nov
-                  2023</small
-                >
-                <small class="text-dark"
-                  ><i class="fas fa-comment-alt me-1 text-dark"></i> Comments
-                  (15)</small
-                >
-              </div>
-              <div
-                class="blog-content d-flex align-items-center px-4 py-3 bg-light"
-              >
-                <div
-                  class="overflow-hidden rounded-circle rounded-top border border-primary"
-                >
-                  <img
-                    src="img/program-teacher.jpg"
-                    class="img-fluid rounded-circle p-2 rounded-top"
-                    alt=""
-                    style="
-                      width: 70px;
-                      height: 70px;
-                      border-style: dotted;
-                      border-color: var(--bs-primary) !important;
-                    "
-                  />
-                </div>
-                <div class="ms-3">
-                  <h6 class="text-primary">Mary Mordern</h6>
-                  <p class="text-muted">Baby Care</p>
-                </div>
-              </div>
-              <div class="px-4 pb-4 bg-light rounded-bottom">
-                <div class="blog-text-inner">
-                  <a href="#" class="h4">How to make time for your kids?</a>
-                  <p class="mt-3 mb-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Donec sed purus
-                  </p>
-                </div>
-                <div class="text-center">
-                  <a
-                    href="#"
-                    class="btn btn-primary text-white px-4 py-2 mb-3 btn-border-radius"
-                    >View Details</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="col-md-6 col-lg-6 col-xl-4 wow fadeIn" data-wow-delay="0.1s"><div class="blog-item rounded-bottom"><div class="blog-img overflow-hidden position-relative img-border-radius"><img src="img/blog-1.jpg" class="img-fluid w-100" alt="Image" /></div><div class="d-flex justify-content-between px-4 py-3 bg-light border-bottom border-primary blog-date-comments"><small class="text-dark"><i class="fas fa-magic me-1 text-dark"></i> Tema</small><small class="text-dark"><i class="fas fa-users me-1 text-dark"></i> Keluarga</small></div><div class="blog-content d-flex align-items-center px-4 py-3 bg-light"><div class="overflow-hidden rounded-circle rounded-top border border-primary"><img src="img/program-teacher.jpg" class="img-fluid rounded-circle p-2 rounded-top" alt="Image" style="width: 70px; height: 70px; border-style: dotted; border-color: var(--bs-primary) !important" /></div><div class="ms-3"><h6 class="text-primary">Lovember Moments</h6><p class="text-muted">Layanan Tambahan</p></div></div><div class="px-4 pb-4 bg-light rounded-bottom"><div class="blog-text-inner"><a href="https://wa.me/6285161072411" class="h4">Tambah tema dan foto keluarga</a><p class="mt-3 mb-4">Tambah tema tersedia mulai Rp 150.000 dan tambahan foto keluarga Rp 150.000 untuk keluarga yang ingin hasil lebih personal dan beragam.</p></div><div class="text-center"><a href="https://wa.me/6285161072411" class="btn btn-primary text-white px-4 py-2 mb-3 btn-border-radius">Tambah Layanan</a></div></div></div></div>
+          <div class="col-md-6 col-lg-6 col-xl-4 wow fadeIn" data-wow-delay="0.3s"><div class="blog-item rounded-bottom"><div class="blog-img overflow-hidden position-relative img-border-radius"><img src="img/blog-2.jpg" class="img-fluid w-100" alt="Image" /></div><div class="d-flex justify-content-between px-4 py-3 bg-light border-bottom border-primary blog-date-comments"><small class="text-dark"><i class="fas fa-print me-1 text-dark"></i> Cetakan</small><small class="text-dark"><i class="fas fa-book-open me-1 text-dark"></i> Album</small></div><div class="blog-content d-flex align-items-center px-4 py-3 bg-light"><div class="overflow-hidden rounded-circle rounded-top border border-primary"><img src="img/program-teacher.jpg" class="img-fluid rounded-circle p-2 rounded-top" alt="" style="width: 70px; height: 70px; border-style: dotted; border-color: var(--bs-primary) !important" /></div><div class="ms-3"><h6 class="text-primary">Lovember Moments</h6><p class="text-muted">Layanan Tambahan</p></div></div><div class="px-4 pb-4 bg-light rounded-bottom"><div class="blog-text-inner"><a href="https://wa.me/6285161072411" class="h4">Tambah cetak dan mini album</a><p class="mt-3 mb-4">Tambah cetakan frame Rp 100.000, tambah cetak foto 5R sebanyak 5 pcs Rp 50.000, dan mini album cetak tersedia Rp 100.000.</p></div><div class="text-center"><a href="https://wa.me/6285161072411" class="btn btn-primary text-white px-4 py-2 mb-3 btn-border-radius">Tambah Layanan</a></div></div></div></div>
+          <div class="col-md-6 col-lg-6 col-xl-4 wow fadeIn" data-wow-delay="0.5s"><div class="blog-item rounded-bottom"><div class="blog-img overflow-hidden position-relative img-border-radius"><img src="img/blog-3.jpg" class="img-fluid w-100" alt="Image" /></div><div class="d-flex justify-content-between px-4 py-3 bg-light border-bottom border-primary blog-date-comments"><small class="text-dark"><i class="fas fa-edit me-1 text-dark"></i> Editing</small><small class="text-dark"><i class="fas fa-hdd me-1 text-dark"></i> File</small></div><div class="blog-content d-flex align-items-center px-4 py-3 bg-light"><div class="overflow-hidden rounded-circle rounded-top border border-primary"><img src="img/program-teacher.jpg" class="img-fluid rounded-circle p-2 rounded-top" alt="" style="width: 70px; height: 70px; border-style: dotted; border-color: var(--bs-primary) !important" /></div><div class="ms-3"><h6 class="text-primary">Lovember Moments</h6><p class="text-muted">Layanan Tambahan</p></div></div><div class="px-4 pb-4 bg-light rounded-bottom"><div class="blog-text-inner"><a href="https://wa.me/6285161072411" class="h4">Edit per foto dan flashdisk</a><p class="mt-3 mb-4">Tambahan edit per foto tersedia Rp 25.000 dan file dalam flashdisk Rp 100.000 untuk keluarga yang ingin penyimpanan fisik yang lebih praktis.</p></div><div class="text-center"><a href="https://wa.me/6285161072411" class="btn btn-primary text-white px-4 py-2 mb-3 btn-border-radius">Tambah Layanan</a></div></div></div></div>
         </div>
       </div>
     </div>
     <!-- Blog End-->
 
-    <!-- Footer Start -->
+        <!-- Footer Start -->
     <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.1s">
       <div class="container py-5">
         <div class="row g-5">
           <div class="col-md-6 col-lg-4 col-xl-3">
             <div class="footer-item">
               <h2 class="fw-bold mb-3">
-                <span class="text-primary mb-0">Baby</span
-                ><span class="text-secondary">Care</span>
+                <span class="text-primary mb-0">Lovember</span
+                ><span class="text-secondary">Moments</span>
               </h2>
               <p class="mb-4">
-                There cursus massa at urnaaculis estieSed aliquamellus vitae
-                ultrs condmentum leo massamollis its estiegittis miristum.
+                Layanan newborn photography di Semarang dan sekitarnya yang
+                mengutamakan keamanan, kenyamanan, dan hasil berkualitas untuk
+                keluarga yang ingin sesi home visit hangat di rumah.
               </p>
               <div class="border border-primary p-3 rounded bg-light">
-                <h5 class="mb-3">Newsletter</h5>
+                <h5 class="mb-3">Konsultasi Sesi</h5>
                 <div
                   class="position-relative mx-auto border border-primary rounded"
                   style="max-width: 400px"
@@ -369,13 +190,13 @@
                   <input
                     class="form-control border-0 w-100 py-3 ps-4 pe-5"
                     type="text"
-                    placeholder="Your email"
+                    placeholder="Email atau nomor WhatsApp"
                   />
                   <button
                     type="button"
                     class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2 text-white"
                   >
-                    SignUp
+                    Kirim
                   </button>
                 </div>
               </div>
@@ -387,13 +208,13 @@
                 class="d-flex flex-column p-4 ps-5 text-dark border border-primary"
                 style="border-radius: 50% 20% / 10% 40%"
               >
-                <p>Monday: 8am to 5pm</p>
-                <p>Tuesday: 8am to 5pm</p>
-                <p>Wednes: 8am to 5pm</p>
-                <p>Thursday: 8am to 5pm</p>
-                <p>Friday: 8am to 5pm</p>
-                <p>Saturday: 8am to 5pm</p>
-                <p class="mb-0">Sunday: Closed</p>
+                <p>Home visit mulai Rp 700.000</p>
+                <p>Durasi sesi 1 sampai 3 jam</p>
+                <p>1 sampai 2 set up tema</p>
+                <p>10 sampai 20 file edit</p>
+                <p>Free transport maksimal 10 km</p>
+                <p>Free konsultasi bidan</p>
+                <p class="mb-0">File via Google Drive atau flashdisk</p>
               </div>
             </div>
           </div>
@@ -402,45 +223,51 @@
               <h4
                 class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius"
               >
-                LOCATION
+                KONTAK
               </h4>
               <div class="d-flex flex-column align-items-start">
                 <a href="" class="text-body mb-4"
-                  ><i class="fa fa-map-marker-alt text-primary me-2"></i> 104
-                  North tower New York, USA</a
+                  ><i class="fa fa-map-marker-alt text-primary me-2"></i>
+                  Semarang dan sekitarnya</a
                 >
-                <a href="" class="text-start rounded-0 text-body mb-4"
-                  ><i class="fa fa-phone-alt text-primary me-2"></i> (+012) 3456
-                  7890 123</a
+                <a
+                  href="https://wa.me/6285161072411"
+                  class="text-start rounded-0 text-body mb-4"
+                  ><i class="fa fa-phone-alt text-primary me-2"></i>
+                  0851-6107-2411 (Puput)</a
                 >
-                <a href="" class="text-start rounded-0 text-body mb-4"
+                <a
+                  href="mailto:lovember.moments@gmail.com"
+                  class="text-start rounded-0 text-body mb-4"
                   ><i class="fas fa-envelope text-primary me-2"></i>
-                  exampleemail@gmail.com</a
+                  lovember.moments@gmail.com</a
                 >
-                <a href="" class="text-start rounded-0 text-body mb-4"
-                  ><i class="fa fa-clock text-primary me-2"></i> 26/7 Hours
-                  Service</a
+                <a
+                  href="https://instagram.com/lovember.moments"
+                  class="text-start rounded-0 text-body mb-4"
+                  ><i class="fab fa-instagram text-primary me-2"></i>
+                  @lovember.moments</a
                 >
                 <div class="footer-icon d-flex">
                   <a
                     class="btn btn-primary btn-sm-square me-3 rounded-circle text-white"
-                    href=""
-                    ><i class="fab fa-facebook-f"></i
+                    href="https://wa.me/6285161072411"
+                    ><i class="fab fa-whatsapp"></i
                   ></a>
                   <a
                     class="btn btn-primary btn-sm-square me-3 rounded-circle text-white"
-                    href=""
-                    ><i class="fab fa-twitter"></i
+                    href="mailto:lovember.moments@gmail.com"
+                    ><i class="fas fa-envelope"></i
                   ></a>
                   <a
-                    href="#"
+                    href="https://instagram.com/lovember.moments"
                     class="btn btn-primary btn-sm-square me-3 rounded-circle text-white"
                     ><i class="fab fa-instagram"></i
                   ></a>
                   <a
-                    href="#"
+                    href="index.html#paket-layanan"
                     class="btn btn-primary btn-sm-square rounded-circle text-white"
-                    ><i class="fab fa-linkedin-in"></i
+                    ><i class="fas fa-camera"></i
                   ></a>
                 </div>
               </div>
@@ -451,7 +278,7 @@
               <h4
                 class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius"
               >
-                OUR GALLARY
+                PORTOFOLIO
               </h4>
               <div class="row g-3">
                 <div class="col-4">
@@ -535,8 +362,7 @@
           <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
             <span class="text-light"
               ><a href="#"
-                ><i class="fas fa-copyright text-light me-2"></i>Your Site
-                Name</a
+                ><i class="fas fa-copyright text-light me-2"></i>Lovember Moments</a
               >, All right reserved.</span
             >
           </div>

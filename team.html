@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="utf-8" />
-    <title>BabyCare - Daycare Website Template</title>
+    <title>Lovember Moments | Sertifikasi</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
-    <meta content="" name="description" />
+    <meta content="Kenali latar belakang kesehatan, sertifikasi, dan keahlian tim Lovember Moments dalam newborn photography." name="description" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -47,33 +47,48 @@
     </div>
     <!-- Spinner End -->
 
-    <!-- Navbar start -->
+        <!-- Navbar start -->
     <div id="navbar-container"></div>
     <script>
-      // Load navbar from external file
-      fetch("navbar.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("navbar-container").innerHTML = data;
-        })
-        .catch((error) => console.error("Error loading navbar:", error));
-
-      document.addEventListener("DOMContentLoaded", function () {
-        const currentPath = window.location.pathname.split("/").pop();
-        const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+      function setActiveNav() {
+        const currentPath =
+          window.location.pathname.split("/").pop() || "index.html";
+        const navLinks = document.querySelectorAll(
+          ".navbar-nav .nav-link, .navbar-nav .dropdown-item"
+        );
 
         navLinks.forEach(function (link) {
           const linkPath = link.getAttribute("href");
-          if (
-            linkPath === currentPath ||
-            (currentPath === "" && linkPath === "team.html")
-          ) {
+          if (linkPath === currentPath) {
             link.classList.add("active");
           } else {
             link.classList.remove("active");
           }
         });
-      });
+
+        const activeDropdownItem = document.querySelector(
+          ".navbar-nav .dropdown-item.active"
+        );
+        const dropdownToggle = document.querySelector(
+          ".navbar-nav .dropdown-toggle"
+        );
+
+        if (dropdownToggle) {
+          dropdownToggle.classList.remove("active");
+        }
+
+        if (activeDropdownItem && dropdownToggle) {
+          dropdownToggle.classList.add("active");
+        }
+      }
+
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar-container").innerHTML = data;
+          setActiveNav();
+        })
+        .catch((error) => console.error("Error loading navbar:", error));
     </script>
     <!-- Navbar End -->
 
@@ -89,7 +104,7 @@
         <div class="modal-content rounded-0">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">
-              Search by keyword
+              Cari halaman
             </h5>
             <button
               type="button"
@@ -103,7 +118,7 @@
               <input
                 type="search"
                 class="form-control p-3"
-                placeholder="keywords"
+                placeholder="Ketik kata kunci"
                 aria-describedby="search-icon-1"
               />
               <span id="search-icon-1" class="input-group-text p-3"
@@ -122,13 +137,12 @@
       data-wow-delay="0.1s"
     >
       <div class="container text-center py-5">
-        <h1 class="display-2 text-white mb-4">Our Team</h1>
+        <h1 class="display-2 text-white mb-4">Sertifikasi</h1>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-center mb-0">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
             <li class="breadcrumb-item text-white" aria-current="page">
-              Our Team
+              Sertifikasi
             </li>
           </ol>
         </nav>
@@ -136,195 +150,40 @@
     </div>
     <!-- Page Header End -->
 
-    <!-- Team Start-->
-    <div class="container-fluid team py-5">
+        <!-- Team Start-->
+    <div class="container-fluid team py-5" id="sertifikasi">
       <div class="container py-5">
-        <div
-          class="mx-auto text-center wow fadeIn"
-          data-wow-delay="0.1s"
-          style="max-width: 600px"
-        >
-          <h4
-            class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius"
-          >
-            Our Team
-          </h4>
-          <h1 class="mb-5 display-3">Meet With Our Expert Teacher</h1>
+        <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px">
+          <h4 class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius">Sertifikasi & Keahlian</h4>
+          <h1 class="mb-5 display-3">Layanan ditangani oleh tenaga dengan latar belakang kesehatan</h1>
         </div>
         <div class="row g-5 justify-content-center">
-          <div
-            class="col-md-6 col-lg-4 col-xl-3 wow fadeIn"
-            data-wow-delay="0.1s"
-          >
-            <div
-              class="team-item border border-primary img-border-radius overflow-hidden"
-            >
-              <img src="img/team-1.jpg" class="img-fluid w-100" alt="" />
-              <div
-                class="team-icon d-flex align-items-center justify-content-center"
-              >
-                <a
-                  class="share btn btn-primary btn-md-square text-white rounded-circle me-3"
-                  href=""
-                  ><i class="fas fa-share-alt"></i
-                ></a>
-                <a
-                  class="share-link btn btn-primary btn-md-square text-white rounded-circle me-3"
-                  href=""
-                  ><i class="fab fa-facebook-f"></i
-                ></a>
-                <a
-                  class="share-link btn btn-primary btn-md-square text-white rounded-circle me-3"
-                  href=""
-                  ><i class="fab fa-twitter"></i
-                ></a>
-                <a
-                  class="share-link btn btn-primary btn-md-square text-white rounded-circle"
-                  href=""
-                  ><i class="fab fa-instagram"></i
-                ></a>
-              </div>
-              <div class="team-content text-center py-3">
-                <h4 class="text-primary">Linda Carlson</h4>
-                <p class="text-muted mb-2">English Teacher</p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-6 col-lg-4 col-xl-3 wow fadeIn"
-            data-wow-delay="0.3s"
-          >
-            <div
-              class="team-item border border-primary img-border-radius overflow-hidden"
-            >
-              <img src="img/team-2.jpg" class="img-fluid w-100" alt="" />
-              <div
-                class="team-icon d-flex align-items-center justify-content-center"
-              >
-                <a
-                  class="share btn btn-primary btn-md-square text-white rounded-circle me-3"
-                  href=""
-                  ><i class="fas fa-share-alt"></i
-                ></a>
-                <a
-                  class="share-link btn btn-primary btn-md-square text-white rounded-circle me-3"
-                  href=""
-                  ><i class="fab fa-facebook-f"></i
-                ></a>
-                <a
-                  class="share-link btn btn-primary btn-md-square text-white rounded-circle me-3"
-                  href=""
-                  ><i class="fab fa-twitter"></i
-                ></a>
-                <a
-                  class="share-link btn btn-primary btn-md-square text-white rounded-circle"
-                  href=""
-                  ><i class="fab fa-instagram"></i
-                ></a>
-              </div>
-              <div class="team-content text-center py-3">
-                <h4 class="text-primary">Linda Carlson</h4>
-                <p class="text-muted mb-2">English Teacher</p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-6 col-lg-4 col-xl-3 wow fadeIn"
-            data-wow-delay="0.5s"
-          >
-            <div
-              class="team-item border border-primary img-border-radius overflow-hidden"
-            >
-              <img src="img/team-3.jpg" class="img-fluid w-100" alt="" />
-              <div
-                class="team-icon d-flex align-items-center justify-content-center"
-              >
-                <a
-                  class="share btn btn-primary btn-md-square text-white rounded-circle me-3"
-                  href=""
-                  ><i class="fas fa-share-alt"></i
-                ></a>
-                <a
-                  class="share-link btn btn-primary btn-md-square text-white rounded-circle me-3"
-                  href=""
-                  ><i class="fab fa-facebook-f"></i
-                ></a>
-                <a
-                  class="share-link btn btn-primary btn-md-square text-white rounded-circle me-3"
-                  href=""
-                  ><i class="fab fa-twitter"></i
-                ></a>
-                <a
-                  class="share-link btn btn-primary btn-md-square text-white rounded-circle"
-                  href=""
-                  ><i class="fab fa-instagram"></i
-                ></a>
-              </div>
-              <div class="team-content text-center py-3">
-                <h4 class="text-primary">Linda Carlson</h4>
-                <p class="text-muted mb-2">English Teacher</p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-6 col-lg-4 col-xl-3 wow fadeIn"
-            data-wow-delay="0.7s"
-          >
-            <div
-              class="team-item border border-primary img-border-radius overflow-hidden"
-            >
-              <img src="img/team-4.jpg" class="img-fluid w-100" alt="" />
-              <div
-                class="team-icon d-flex align-items-center justify-content-center"
-              >
-                <a
-                  class="share btn btn-primary btn-md-square text-white rounded-circle me-3"
-                  href=""
-                  ><i class="fas fa-share-alt"></i
-                ></a>
-                <a
-                  class="share-link btn btn-primary btn-md-square text-white rounded-circle me-3"
-                  href=""
-                  ><i class="fab fa-facebook-f"></i
-                ></a>
-                <a
-                  class="share-link btn btn-primary btn-md-square text-white rounded-circle me-3"
-                  href=""
-                  ><i class="fab fa-twitter"></i
-                ></a>
-                <a
-                  class="share-link btn btn-primary btn-md-square text-white rounded-circle"
-                  href=""
-                  ><i class="fab fa-instagram"></i
-                ></a>
-              </div>
-              <div class="team-content text-center py-3">
-                <h4 class="text-primary">Linda Carlson</h4>
-                <p class="text-muted mb-2">English Teacher</p>
-              </div>
-            </div>
-          </div>
+          <div class="col-md-6 col-lg-4 col-xl-3 wow fadeIn" data-wow-delay="0.1s"><div class="team-item border border-primary img-border-radius overflow-hidden"><img src="img/team-1.jpg" class="img-fluid w-100" alt="" /><div class="team-icon d-flex align-items-center justify-content-center"><a class="share btn btn-primary btn-md-square text-white rounded-circle me-3" href="https://instagram.com/lovember.moments"><i class="fas fa-share-alt"></i></a><a class="share-link btn btn-primary btn-md-square text-white rounded-circle me-3" href="https://wa.me/6285161072411"><i class="fab fa-whatsapp"></i></a><a class="share-link btn btn-primary btn-md-square text-white rounded-circle me-3" href="mailto:lovember.moments@gmail.com"><i class="fas fa-envelope"></i></a><a class="share-link btn btn-primary btn-md-square text-white rounded-circle" href="https://instagram.com/lovember.moments"><i class="fab fa-instagram"></i></a></div><div class="team-content text-center py-3"><h4 class="text-primary">Dwi Noviani Puteri Camilla</h4><p class="text-muted mb-2">Bidan, Fotografer Newborn & Founder</p></div></div></div>
+          <div class="col-md-6 col-lg-4 col-xl-3 wow fadeIn" data-wow-delay="0.3s"><div class="team-item border border-primary img-border-radius overflow-hidden"><img src="img/team-2.jpg" class="img-fluid w-100" alt="" /><div class="team-icon d-flex align-items-center justify-content-center"><a class="share btn btn-primary btn-md-square text-white rounded-circle me-3" href="https://instagram.com/lovember.moments"><i class="fas fa-share-alt"></i></a><a class="share-link btn btn-primary btn-md-square text-white rounded-circle me-3" href="https://wa.me/6285161072411"><i class="fab fa-whatsapp"></i></a><a class="share-link btn btn-primary btn-md-square text-white rounded-circle me-3" href="mailto:lovember.moments@gmail.com"><i class="fas fa-envelope"></i></a><a class="share-link btn btn-primary btn-md-square text-white rounded-circle" href="https://instagram.com/lovember.moments"><i class="fab fa-instagram"></i></a></div><div class="team-content text-center py-3"><h4 class="text-primary">STR Bidan</h4><p class="text-muted mb-2">Legalitas profesi kesehatan</p></div></div></div>
+          <div class="col-md-6 col-lg-4 col-xl-3 wow fadeIn" data-wow-delay="0.5s"><div class="team-item border border-primary img-border-radius overflow-hidden"><img src="img/team-3.jpg" class="img-fluid w-100" alt="" /><div class="team-icon d-flex align-items-center justify-content-center"><a class="share btn btn-primary btn-md-square text-white rounded-circle me-3" href="https://instagram.com/lovember.moments"><i class="fas fa-share-alt"></i></a><a class="share-link btn btn-primary btn-md-square text-white rounded-circle me-3" href="https://wa.me/6285161072411"><i class="fab fa-whatsapp"></i></a><a class="share-link btn btn-primary btn-md-square text-white rounded-circle me-3" href="mailto:lovember.moments@gmail.com"><i class="fas fa-envelope"></i></a><a class="share-link btn btn-primary btn-md-square text-white rounded-circle" href="https://instagram.com/lovember.moments"><i class="fab fa-instagram"></i></a></div><div class="team-content text-center py-3"><h4 class="text-primary">Workshop Newborn Photography</h4><p class="text-muted mb-2">Pelatihan teknis newborn photo</p></div></div></div>
+          <div class="col-md-6 col-lg-4 col-xl-3 wow fadeIn" data-wow-delay="0.7s"><div class="team-item border border-primary img-border-radius overflow-hidden"><img src="img/team-4.jpg" class="img-fluid w-100" alt="" /><div class="team-icon d-flex align-items-center justify-content-center"><a class="share btn btn-primary btn-md-square text-white rounded-circle me-3" href="https://instagram.com/lovember.moments"><i class="fas fa-share-alt"></i></a><a class="share-link btn btn-primary btn-md-square text-white rounded-circle me-3" href="https://wa.me/6285161072411"><i class="fab fa-whatsapp"></i></a><a class="share-link btn btn-primary btn-md-square text-white rounded-circle me-3" href="mailto:lovember.moments@gmail.com"><i class="fas fa-envelope"></i></a><a class="share-link btn btn-primary btn-md-square text-white rounded-circle" href="https://instagram.com/lovember.moments"><i class="fab fa-instagram"></i></a></div><div class="team-content text-center py-3"><h4 class="text-primary">Certified Mom & Baby Care Therapist</h4><p class="text-muted mb-2">Pendampingan ibu dan bayi</p></div></div></div>
         </div>
       </div>
     </div>
     <!-- Team End-->
 
-    <!-- Footer Start -->
+        <!-- Footer Start -->
     <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.1s">
       <div class="container py-5">
         <div class="row g-5">
           <div class="col-md-6 col-lg-4 col-xl-3">
             <div class="footer-item">
               <h2 class="fw-bold mb-3">
-                <span class="text-primary mb-0">Baby</span
-                ><span class="text-secondary">Care</span>
+                <span class="text-primary mb-0">Lovember</span
+                ><span class="text-secondary">Moments</span>
               </h2>
               <p class="mb-4">
-                There cursus massa at urnaaculis estieSed aliquamellus vitae
-                ultrs condmentum leo massamollis its estiegittis miristum.
+                Layanan newborn photography di Semarang dan sekitarnya yang
+                mengutamakan keamanan, kenyamanan, dan hasil berkualitas untuk
+                keluarga yang ingin sesi home visit hangat di rumah.
               </p>
               <div class="border border-primary p-3 rounded bg-light">
-                <h5 class="mb-3">Newsletter</h5>
+                <h5 class="mb-3">Konsultasi Sesi</h5>
                 <div
                   class="position-relative mx-auto border border-primary rounded"
                   style="max-width: 400px"
@@ -332,13 +191,13 @@
                   <input
                     class="form-control border-0 w-100 py-3 ps-4 pe-5"
                     type="text"
-                    placeholder="Your email"
+                    placeholder="Email atau nomor WhatsApp"
                   />
                   <button
                     type="button"
                     class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2 text-white"
                   >
-                    SignUp
+                    Kirim
                   </button>
                 </div>
               </div>
@@ -350,13 +209,13 @@
                 class="d-flex flex-column p-4 ps-5 text-dark border border-primary"
                 style="border-radius: 50% 20% / 10% 40%"
               >
-                <p>Monday: 8am to 5pm</p>
-                <p>Tuesday: 8am to 5pm</p>
-                <p>Wednes: 8am to 5pm</p>
-                <p>Thursday: 8am to 5pm</p>
-                <p>Friday: 8am to 5pm</p>
-                <p>Saturday: 8am to 5pm</p>
-                <p class="mb-0">Sunday: Closed</p>
+                <p>Home visit mulai Rp 700.000</p>
+                <p>Durasi sesi 1 sampai 3 jam</p>
+                <p>1 sampai 2 set up tema</p>
+                <p>10 sampai 20 file edit</p>
+                <p>Free transport maksimal 10 km</p>
+                <p>Free konsultasi bidan</p>
+                <p class="mb-0">File via Google Drive atau flashdisk</p>
               </div>
             </div>
           </div>
@@ -365,45 +224,51 @@
               <h4
                 class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius"
               >
-                LOCATION
+                KONTAK
               </h4>
               <div class="d-flex flex-column align-items-start">
                 <a href="" class="text-body mb-4"
-                  ><i class="fa fa-map-marker-alt text-primary me-2"></i> 104
-                  North tower New York, USA</a
+                  ><i class="fa fa-map-marker-alt text-primary me-2"></i>
+                  Semarang dan sekitarnya</a
                 >
-                <a href="" class="text-start rounded-0 text-body mb-4"
-                  ><i class="fa fa-phone-alt text-primary me-2"></i> (+012) 3456
-                  7890 123</a
+                <a
+                  href="https://wa.me/6285161072411"
+                  class="text-start rounded-0 text-body mb-4"
+                  ><i class="fa fa-phone-alt text-primary me-2"></i>
+                  0851-6107-2411 (Puput)</a
                 >
-                <a href="" class="text-start rounded-0 text-body mb-4"
+                <a
+                  href="mailto:lovember.moments@gmail.com"
+                  class="text-start rounded-0 text-body mb-4"
                   ><i class="fas fa-envelope text-primary me-2"></i>
-                  exampleemail@gmail.com</a
+                  lovember.moments@gmail.com</a
                 >
-                <a href="" class="text-start rounded-0 text-body mb-4"
-                  ><i class="fa fa-clock text-primary me-2"></i> 26/7 Hours
-                  Service</a
+                <a
+                  href="https://instagram.com/lovember.moments"
+                  class="text-start rounded-0 text-body mb-4"
+                  ><i class="fab fa-instagram text-primary me-2"></i>
+                  @lovember.moments</a
                 >
                 <div class="footer-icon d-flex">
                   <a
                     class="btn btn-primary btn-sm-square me-3 rounded-circle text-white"
-                    href=""
-                    ><i class="fab fa-facebook-f"></i
+                    href="https://wa.me/6285161072411"
+                    ><i class="fab fa-whatsapp"></i
                   ></a>
                   <a
                     class="btn btn-primary btn-sm-square me-3 rounded-circle text-white"
-                    href=""
-                    ><i class="fab fa-twitter"></i
+                    href="mailto:lovember.moments@gmail.com"
+                    ><i class="fas fa-envelope"></i
                   ></a>
                   <a
-                    href="#"
+                    href="https://instagram.com/lovember.moments"
                     class="btn btn-primary btn-sm-square me-3 rounded-circle text-white"
                     ><i class="fab fa-instagram"></i
                   ></a>
                   <a
-                    href="#"
+                    href="index.html#paket-layanan"
                     class="btn btn-primary btn-sm-square rounded-circle text-white"
-                    ><i class="fab fa-linkedin-in"></i
+                    ><i class="fas fa-camera"></i
                   ></a>
                 </div>
               </div>
@@ -414,7 +279,7 @@
               <h4
                 class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius"
               >
-                OUR GALLARY
+                PORTOFOLIO
               </h4>
               <div class="row g-3">
                 <div class="col-4">
@@ -498,8 +363,7 @@
           <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
             <span class="text-light"
               ><a href="#"
-                ><i class="fas fa-copyright text-light me-2"></i>Your Site
-                Name</a
+                ><i class="fas fa-copyright text-light me-2"></i>Lovember Moments</a
               >, All right reserved.</span
             >
           </div>
