@@ -207,6 +207,30 @@ a:hover {
     border-radius: 25% 10%;
 }
 
+.btn-whatsapp {
+    background-color: #25d366;
+    border-color: #25d366;
+    color: var(--bs-white);
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebe5d;
+    border-color: #1ebe5d;
+    color: var(--bs-white);
+}
+
+.contact-action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.contact-action-buttons .btn {
+    min-width: 220px;
+    justify-content: center;
+}
+
 .img-border-radius {
     border-radius: 50% 20% / 10% 40%;
 }
@@ -399,6 +423,7 @@ a:hover {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 /*** Hero Header ***/
 
 
@@ -412,6 +437,13 @@ a:hover {
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
+}
+
+.about-video {
+    background: linear-gradient(rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)), url(../img/profile/WhatsApp%20Image%202026-04-24%20at%2013.28.44.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .video .btn-play {
@@ -778,6 +810,27 @@ a:hover {
     height: 100%;
     border-radius: 30%;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+}
+
+.events .events-item .events-inner {
+    padding: 18px 18px 0;
+}
+
+.events .events-item .events-img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: 999px !important;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.events .events-item .events-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .events .events-item .events-inner .events-rate {
@@ -826,6 +879,13 @@ a:hover {
     transition: 0.5s;
 }
 
+.events .events-item .events-text {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
 .events .events-item:hover .events-text a.h4 {
     color: var(--bs-primary) !important;
 }
@@ -837,6 +897,20 @@ a:hover {
 
 
 /*** Blog Start ***/
+.blog .blog-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 28px;
+}
+
+.blog .blog-item .blog-img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background: rgba(255, 255, 255, 0.18);
+}
+
 .blog .blog-item .blog-img::after {
     position: absolute;
     content: "";
@@ -856,14 +930,42 @@ a:hover {
 }
 
 .blog .blog-item .blog-date-comments {
-    padding-top: 150px !important; 
-    margin-top: -125px;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    margin-top: 0;
+    min-height: auto;
+    align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .blog .blog-item .blog-img img,
 .blog .blog-item .blog-content img,
 .blog .blog-item .blog-text-inner a.h4 {
     transition: 0.5s;
+}
+
+.blog .blog-item .blog-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.blog .blog-item .blog-content {
+    position: relative;
+    z-index: 2;
+}
+
+.blog .blog-item > div:last-child {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.blog .blog-item .blog-text-inner {
+    flex: 1 1 auto;
 }
 
 .blog .blog-item:hover .blog-img img {
