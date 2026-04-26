@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
   <head>
     <meta charset="utf-8" />
@@ -39,6 +39,28 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+
+    <style>
+      .local-search-results {
+        width: min(900px, 100%);
+        margin: 1.5rem auto 0;
+      }
+
+      .local-search-results .list-group-item {
+        cursor: pointer;
+        border-color: rgba(var(--brand-primary-rgb), 0.2);
+      }
+
+      .local-search-results .list-group-item:hover {
+        background: rgba(var(--brand-primary-rgb), 0.08);
+      }
+
+      .local-search-empty {
+        width: min(900px, 100%);
+        margin: 1.5rem auto 0;
+        color: var(--brand-text);
+      }
+    </style>
   </head>
 
   <body>
@@ -93,7 +115,7 @@
         <div class="modal-content rounded-0">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">
-              Search by keyword
+              Cari di halaman ini
             </h5>
             <button
               type="button"
@@ -103,16 +125,21 @@
             ></button>
           </div>
           <div class="modal-body d-flex align-items-center">
-            <div class="input-group w-75 mx-auto d-flex">
-              <input
-                type="search"
-                class="form-control p-3"
-                placeholder="keywords"
-                aria-describedby="search-icon-1"
-              />
-              <span id="search-icon-1" class="input-group-text p-3"
-                ><i class="fa fa-search"></i
-              ></span>
+            <div class="w-100">
+              <div class="input-group w-75 mx-auto d-flex">
+                <input
+                  id="localSearchInput"
+                  type="search"
+                  class="form-control p-3"
+                  placeholder="Cari di halaman ini"
+                  aria-describedby="search-icon-1"
+                  autocomplete="off"
+                />
+                <span id="search-icon-1" class="input-group-text p-3"
+                  ><i class="fa fa-search"></i
+                ></span>
+              </div>
+              <div id="localSearchResults" class="local-search-results"></div>
             </div>
           </div>
         </div>
@@ -363,6 +390,337 @@
       </div>
     </div>
     <!-- Service End -->
+
+    <!-- Pose Showcase Start -->
+    <div class="container-fluid pose-showcase py-5" id="gaya-pose">
+      <div class="container py-5">
+        <div
+          class="mx-auto text-center wow fadeIn pose-showcase-header"
+          data-wow-delay="0.1s"
+          style="max-width: 860px"
+        >
+          <h4
+            class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius"
+          >
+            Pilihan Gaya Pose
+          </h4>
+          <h1 class="mb-4 display-3">
+            Tiga gaya newborn yang paling sering dipilih keluarga
+          </h1>
+          <p class="pose-showcase-intro">
+            Setiap sesi bisa disesuaikan dengan kondisi bayi, warna favorit,
+            dan konsep yang bunda inginkan. Kami bantu arahkan gaya foto yang
+            paling aman, nyaman, dan tetap cantik saat hasilnya dicetak.
+          </p>
+          <div class="pose-showcase-note">
+            <i class="fas fa-heart text-primary"></i>
+            Semua pose dilakukan menyesuaikan kenyamanan bayi saat sesi.
+          </div>
+        </div>
+
+        <div class="pose-list mt-5">
+          <article class="pose-card wow fadeInUp" data-wow-delay="0.1s">
+            <div class="pose-card-copy">
+              <div class="pose-card-top">
+                <span class="pose-card-line"></span>
+                <span class="pose-card-emblem">
+                  <img src="img/icon Lovember.png" alt="Lovember emblem" />
+                </span>
+                <span class="pose-card-line"></span>
+              </div>
+              <span class="pose-card-kicker">Pose 01</span>
+              <h2 class="pose-card-title">Basic Pose</h2>
+              <p class="pose-card-text">
+                Basic pose berfokus pada bayi dengan gaya sederhana, minim
+                properti, dan komposisi yang lembut. Pilihan ini cocok untuk
+                menonjolkan ekspresi mungil, detail wajah, tangan, dan pose
+                natural newborn.
+              </p>
+              <div class="pose-card-tags">
+                <span>Simple & clean</span>
+                <span>Fokus detail bayi</span>
+                <span>Minim properti</span>
+              </div>
+            </div>
+            <div class="pose-card-media pose-card-media--gallery">
+              <div class="pose-gallery-grid">
+                <a
+                  href="img/basic%20Pose/624051938_18108208627737848_7067305896678574710_n.jpg"
+                  class="pose-gallery-item"
+                  data-lightbox="basic-pose-home"
+                  data-title="Basic Pose 1 - newborn pose sederhana dan lembut"
+                >
+                  <img
+                    src="img/basic%20Pose/624051938_18108208627737848_7067305896678574710_n.jpg"
+                    class="pose-gallery-thumb"
+                    alt="Basic pose newborn dengan kain putih"
+                  />
+                </a>
+                <a
+                  href="img/basic%20Pose/624947787_18110428252654664_8464065804462107964_n.jpg"
+                  class="pose-gallery-item"
+                  data-lightbox="basic-pose-home"
+                  data-title="Basic Pose 2 - newborn dengan floral setup lembut"
+                >
+                  <img
+                    src="img/basic%20Pose/624947787_18110428252654664_8464065804462107964_n.jpg"
+                    class="pose-gallery-thumb"
+                    alt="Basic pose newborn dengan bantal dan bunga"
+                  />
+                </a>
+                <a
+                  href="img/basic%20Pose/626551099_18111111364729316_7398161166719175528_n.jpg"
+                  class="pose-gallery-item"
+                  data-lightbox="basic-pose-home"
+                  data-title="Basic Pose 3 - newborn dengan kostum abu-abu"
+                >
+                  <img
+                    src="img/basic%20Pose/626551099_18111111364729316_7398161166719175528_n.jpg"
+                    class="pose-gallery-thumb"
+                    alt="Basic pose newborn dengan kostum abu-abu"
+                  />
+                </a>
+                <a
+                  href="img/basic%20Pose/627516541_18083780072224110_416698878030205858_n.jpg"
+                  class="pose-gallery-item"
+                  data-lightbox="basic-pose-home"
+                  data-title="Basic Pose 4 - newborn dengan kain pink lembut"
+                >
+                  <img
+                    src="img/basic%20Pose/627516541_18083780072224110_416698878030205858_n.jpg"
+                    class="pose-gallery-thumb"
+                    alt="Basic pose newborn dengan kain pink"
+                  />
+                </a>
+              </div>
+              <div class="pose-card-caption">
+                <span>
+                  Cocok untuk keluarga yang ingin hasil timeless, lembut, dan
+                  fokus ke bayi.
+                </span>
+                <span class="pose-card-arrow" aria-hidden="true">&rarr;</span>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="pose-card pose-card--reverse wow fadeInUp"
+            data-wow-delay="0.2s"
+          >
+            <div class="pose-card-copy">
+              <div class="pose-card-top">
+                <span class="pose-card-line"></span>
+                <span class="pose-card-emblem">
+                  <img src="img/icon Lovember.png" alt="Lovember emblem" />
+                </span>
+                <span class="pose-card-line"></span>
+              </div>
+              <div class="pose-inline-gallery">
+                <a
+                  href="img/Warp%20Pose/609710369_17873044125478125_3934007431479029746_n.jpg"
+                  class="pose-gallery-item"
+                  data-lightbox="wrap-pose-home"
+                  data-title="Wrap Pose 1 - newborn dengan konsep avocado"
+                >
+                  <img
+                    src="img/Warp%20Pose/609710369_17873044125478125_3934007431479029746_n.jpg"
+                    class="pose-gallery-thumb"
+                    alt="Wrap pose newborn dengan tema avocado"
+                  />
+                </a>
+                <a
+                  href="img/Warp%20Pose/610550899_17873428806478125_4551733692360418502_n.jpg"
+                  class="pose-gallery-item"
+                  data-lightbox="wrap-pose-home"
+                  data-title="Wrap Pose 2 - newborn dengan tema profesi"
+                >
+                  <img
+                    src="img/Warp%20Pose/610550899_17873428806478125_4551733692360418502_n.jpg"
+                    class="pose-gallery-thumb"
+                    alt="Wrap pose newborn dengan tema profesi"
+                  />
+                </a>
+                <a
+                  href="img/Warp%20Pose/625054331_18122526202499260_6776319421401633974_n.jpg"
+                  class="pose-gallery-item"
+                  data-lightbox="wrap-pose-home"
+                  data-title="Wrap Pose 3 - newborn dengan bedong pink lembut"
+                >
+                  <img
+                    src="img/Warp%20Pose/625054331_18122526202499260_6776319421401633974_n.jpg"
+                    class="pose-gallery-thumb"
+                    alt="Wrap pose newborn dengan bedong pink"
+                  />
+                </a>
+                <a
+                  href="img/Warp%20Pose/625362185_18094530532754971_5420161595251520540_n.jpg"
+                  class="pose-gallery-item"
+                  data-lightbox="wrap-pose-home"
+                  data-title="Wrap Pose 4 - newborn dengan konsep tematik"
+                >
+                  <img
+                    src="img/Warp%20Pose/625362185_18094530532754971_5420161595251520540_n.jpg"
+                    class="pose-gallery-thumb"
+                    alt="Wrap pose newborn dengan konsep tematik"
+                  />
+                </a>
+              </div>
+              <span class="pose-card-kicker">Pose 02</span>
+              <h2 class="pose-card-title">Wrap</h2>
+              <p class="pose-card-text">
+                Wrap adalah gaya foto dengan bayi dibedong rapi agar tubuhnya
+                terasa hangat dan nyaman selama sesi. Warna kain, tekstur, dan
+                detail aksesori bisa disesuaikan dengan tema yang bunda
+                inginkan.
+              </p>
+              <div class="pose-card-tags">
+                <span>Bedong hangat</span>
+                <span>Rapi & manis</span>
+                <span>Warna bisa request</span>
+              </div>
+            </div>
+            <div class="pose-card-media pose-card-media--gallery">
+              <a
+                href="img/profile/WhatsApp%20Image%202026-04-24%20at%2012.35.04.jpeg"
+                class="pose-card-photo-wrap pose-feature-link"
+                data-lightbox="wrap-pose-home"
+                data-title="Wrap Pose utama - newborn dibedong lembut bersama kakak"
+              >
+                <img
+                  src="img/profile/WhatsApp%20Image%202026-04-24%20at%2012.35.04.jpeg"
+                  class="pose-card-photo pose-card-photo--feature"
+                  alt="Wrap pose utama newborn bersama kakak"
+                />
+              </a>
+              <div class="pose-card-caption">
+                <span>
+                  Sangat pas untuk newborn yang lebih nyaman saat dibedong
+                  lembut.
+                </span>
+                <span class="pose-card-arrow" aria-hidden="true">&rarr;</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="pose-card wow fadeInUp" data-wow-delay="0.3s">
+            <div class="pose-card-copy">
+              <div class="pose-card-top">
+                <span class="pose-card-line"></span>
+                <span class="pose-card-emblem">
+                  <img src="img/icon Lovember.png" alt="Lovember emblem" />
+                </span>
+                <span class="pose-card-line"></span>
+              </div>
+              <div class="pose-inline-gallery">
+                <a
+                  href="img/Props/553564469_17862546612478125_1446232056685179692_n.jpg"
+                  class="pose-gallery-item"
+                  data-lightbox="props-pose-home"
+                  data-title="Props 1 - newborn dengan tema motor sport"
+                >
+                  <img
+                    src="img/Props/553564469_17862546612478125_1446232056685179692_n.jpg"
+                    class="pose-gallery-thumb"
+                    alt="Props newborn tema motor sport"
+                  />
+                </a>
+                <a
+                  href="img/Props/556689846_17862975156478125_2220769574099176346_n.jpg"
+                  class="pose-gallery-item"
+                  data-lightbox="props-pose-home"
+                  data-title="Props 2 - newborn dengan dekor floral ungu"
+                >
+                  <img
+                    src="img/Props/556689846_17862975156478125_2220769574099176346_n.jpg"
+                    class="pose-gallery-thumb"
+                    alt="Props newborn dekor floral ungu"
+                  />
+                </a>
+                <a
+                  href="img/Props/558205657_17863307430478125_2305809130714732894_n.jpg"
+                  class="pose-gallery-item"
+                  data-lightbox="props-pose-home"
+                  data-title="Props 3 - newborn dengan tema salon pink"
+                >
+                  <img
+                    src="img/Props/558205657_17863307430478125_2305809130714732894_n.jpg"
+                    class="pose-gallery-thumb"
+                    alt="Props newborn tema salon pink"
+                  />
+                </a>
+                <a
+                  href="img/Props/624310873_18091409150052279_5604071389327168844_n.jpg"
+                  class="pose-gallery-item"
+                  data-lightbox="props-pose-home"
+                  data-title="Props 4 - newborn dengan tema karakter"
+                >
+                  <img
+                    src="img/Props/624310873_18091409150052279_5604071389327168844_n.jpg"
+                    class="pose-gallery-thumb"
+                    alt="Props newborn tema karakter"
+                  />
+                </a>
+                <a
+                  href="img/Props/628167263_18115384072618584_6573215190053458601_n.jpg"
+                  class="pose-gallery-item"
+                  data-lightbox="props-pose-home"
+                  data-title="Props 5 - newborn dengan tema petualangan"
+                >
+                  <img
+                    src="img/Props/628167263_18115384072618584_6573215190053458601_n.jpg"
+                    class="pose-gallery-thumb"
+                    alt="Props newborn tema petualangan"
+                  />
+                </a>
+              </div>
+              <span class="pose-card-kicker">Pose 03</span>
+              <h2 class="pose-card-title">Props</h2>
+              <p class="pose-card-text">
+                Props memakai elemen tambahan seperti mini bed, dekor tematik,
+                kartu nama bayi, cetak hasil, atau aksesori pilihan agar sesi
+                terasa lebih personal. Gaya ini fleksibel untuk request konsep
+                dan tone warna keluarga.
+              </p>
+              <div class="pose-card-tags">
+                <span>Tema lebih personal</span>
+                <span>Setup dekoratif</span>
+                <span>Lebih variatif</span>
+              </div>
+            </div>
+            <div class="pose-card-media pose-card-media--gallery">
+              <a
+                href="img/Props/625104794_18036667388753285_7280504451690528029_n.jpg"
+                class="pose-card-photo-wrap pose-feature-link"
+                data-lightbox="props-pose-home"
+                data-title="Props utama - newborn dengan tema konstruksi"
+              >
+                <img
+                  src="img/Props/625104794_18036667388753285_7280504451690528029_n.jpg"
+                  class="pose-card-photo pose-card-photo--feature"
+                  alt="Props utama newborn dengan tema konstruksi"
+                />
+              </a>
+              <div class="pose-card-caption">
+                <span>
+                  Ideal untuk keluarga yang ingin hasil lebih tematik dan penuh
+                  detail.
+                </span>
+                <span class="pose-card-arrow" aria-hidden="true">&rarr;</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="text-center wow fadeIn pose-showcase-cta" data-wow-delay="0.4s">
+          <a
+            href="service.html#gaya-pose"
+            class="btn btn-primary px-5 py-3 btn-border-radius"
+            >Lihat Detail Pose</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- Pose Showcase End -->
 
     <!-- Programs Start -->
     <div class="container-fluid program py-5" id="paket-layanan">
@@ -1049,10 +1407,7 @@
             class="testimonial-item img-border-radius bg-light border border-primary p-4"
           >
             <div class="p-4 position-relative">
-              <i
-                class="fa fa-quote-right fa-2x text-primary position-absolute"
-                style="top: 15px; right: 15px"
-              ></i>
+              <i class="fa fa-quote-right fa-2x text-primary position-absolute testimonial-item-quote-mark"></i>
               <div class="d-flex align-items-center">
                 <div class="border border-primary bg-white rounded-circle">
                   <img
@@ -1067,10 +1422,10 @@
                     alt="Logo Lovember Moments"
                   />
                 </div>
-                <div class="ms-4">
-                  <h4 class="text-dark">Keamanan Bayi</h4>
-                  <p class="m-0 pb-3">Prioritas Utama</p>
-                  <div class="d-flex pe-5">
+                <div class="ms-4 testimonial-item-copy">
+                  <h4 class="text-dark testimonial-item-title">Keamanan Bayi</h4>
+                  <p class="testimonial-item-subtitle">Prioritas Utama</p>
+                  <div class="testimonial-item-stars d-flex">
                     <i class="fas fa-star text-primary"></i>
                     <i class="fas fa-star text-primary"></i>
                     <i class="fas fa-star text-primary"></i>
@@ -1091,10 +1446,7 @@
             class="testimonial-item img-border-radius bg-light border border-primary p-4"
           >
             <div class="p-4 position-relative">
-              <i
-                class="fa fa-quote-right fa-2x text-primary position-absolute"
-                style="top: 15px; right: 15px"
-              ></i>
+              <i class="fa fa-quote-right fa-2x text-primary position-absolute testimonial-item-quote-mark"></i>
               <div class="d-flex align-items-center">
                 <div class="border border-primary bg-white rounded-circle">
                   <img
@@ -1109,10 +1461,10 @@
                     alt="Logo Lovember Moments"
                   />
                 </div>
-                <div class="ms-4">
-                  <h4 class="text-dark">Kualitas Hasil</h4>
-                  <p class="m-0 pb-3">Soft & Natural</p>
-                  <div class="d-flex pe-5">
+                <div class="ms-4 testimonial-item-copy">
+                  <h4 class="text-dark testimonial-item-title">Kualitas Hasil</h4>
+                  <p class="testimonial-item-subtitle">Soft & Natural</p>
+                  <div class="testimonial-item-stars d-flex">
                     <i class="fas fa-star text-primary"></i>
                     <i class="fas fa-star text-primary"></i>
                     <i class="fas fa-star text-primary"></i>
@@ -1134,10 +1486,7 @@
             class="testimonial-item img-border-radius bg-light border border-primary p-4"
           >
             <div class="p-4 position-relative">
-              <i
-                class="fa fa-quote-right fa-2x text-primary position-absolute"
-                style="top: 15px; right: 15px"
-              ></i>
+              <i class="fa fa-quote-right fa-2x text-primary position-absolute testimonial-item-quote-mark"></i>
               <div class="d-flex align-items-center">
                 <div class="border border-primary bg-white rounded-circle">
                   <img
@@ -1152,10 +1501,10 @@
                     alt="Logo Lovember Moments"
                   />
                 </div>
-                <div class="ms-4">
-                  <h4 class="text-dark">Home Visit Fleksibel</h4>
-                  <p class="m-0 pb-3">Praktis di Rumah</p>
-                  <div class="d-flex pe-5">
+                <div class="ms-4 testimonial-item-copy">
+                  <h4 class="text-dark testimonial-item-title">Home Visit Fleksibel</h4>
+                  <p class="testimonial-item-subtitle">Praktis di Rumah</p>
+                  <div class="testimonial-item-stars d-flex">
                     <i class="fas fa-star text-primary"></i>
                     <i class="fas fa-star text-primary"></i>
                     <i class="fas fa-star text-primary"></i>
@@ -1196,25 +1545,6 @@
                 mengutamakan keamanan, kenyamanan, dan hasil berkualitas untuk
                 keluarga yang ingin sesi home visit hangat di rumah.
               </p>
-              <div class="border border-primary p-3 rounded bg-light">
-                <h5 class="mb-3">Konsultasi Sesi</h5>
-                <div
-                  class="position-relative mx-auto border border-primary rounded"
-                  style="max-width: 400px"
-                >
-                  <input
-                    class="form-control border-0 w-100 py-3 ps-4 pe-5"
-                    type="text"
-                    placeholder="Email atau nomor WhatsApp"
-                  />
-                  <button
-                    type="button"
-                    class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2 text-white"
-                  >
-                    Kirim
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 col-xl-3">
@@ -1297,70 +1627,94 @@
               </h4>
               <div class="row g-3">
                 <div class="col-4">
-                  <div
+                  <a
+                    href="https://instagram.com/lovember.moments"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Lihat portofolio Lovember Moments di Instagram"
                     class="footer-galary-img rounded-circle border border-primary"
                   >
                     <img
-                      src="img/galary-1.jpg"
+                      src="img/Props/625104794_18036667388753285_7280504451690528029_n.jpg"
                       class="img-fluid rounded-circle p-2"
-                      alt=""
+                      alt="Portofolio newborn tema konstruksi"
                     />
-                  </div>
+                  </a>
                 </div>
                 <div class="col-4">
-                  <div
+                  <a
+                    href="https://instagram.com/lovember.moments"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Lihat portofolio Lovember Moments di Instagram"
                     class="footer-galary-img rounded-circle border border-primary"
                   >
                     <img
-                      src="img/galary-2.jpg"
+                      src="img/Warp%20Pose/609710369_17873044125478125_3934007431479029746_n.jpg"
                       class="img-fluid rounded-circle p-2"
-                      alt=""
+                      alt="Portofolio wrap pose tema avocado"
                     />
-                  </div>
+                  </a>
                 </div>
                 <div class="col-4">
-                  <div
+                  <a
+                    href="https://instagram.com/lovember.moments"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Lihat portofolio Lovember Moments di Instagram"
                     class="footer-galary-img rounded-circle border border-primary"
                   >
                     <img
-                      src="img/galary-3.jpg"
+                      src="img/basic%20Pose/624947787_18110428252654664_8464065804462107964_n.jpg"
                       class="img-fluid rounded-circle p-2"
-                      alt=""
+                      alt="Portofolio basic pose tema floral"
                     />
-                  </div>
+                  </a>
                 </div>
                 <div class="col-4">
-                  <div
+                  <a
+                    href="https://instagram.com/lovember.moments"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Lihat portofolio Lovember Moments di Instagram"
                     class="footer-galary-img rounded-circle border border-primary"
                   >
                     <img
-                      src="img/galary-4.jpg"
+                      src="img/Props/624310873_18091409150052279_5604071389327168844_n.jpg"
                       class="img-fluid rounded-circle p-2"
-                      alt=""
+                      alt="Portofolio newborn tema karakter"
                     />
-                  </div>
+                  </a>
                 </div>
                 <div class="col-4">
-                  <div
+                  <a
+                    href="https://instagram.com/lovember.moments"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Lihat portofolio Lovember Moments di Instagram"
                     class="footer-galary-img rounded-circle border border-primary"
                   >
                     <img
-                      src="img/galary-5.jpg"
+                      src="img/Warp%20Pose/625054331_18122526202499260_6776319421401633974_n.jpg"
                       class="img-fluid rounded-circle p-2"
-                      alt=""
+                      alt="Portofolio wrap pose bedong pink"
                     />
-                  </div>
+                  </a>
                 </div>
                 <div class="col-4">
-                  <div
+                  <a
+                    href="https://instagram.com/lovember.moments"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Lihat portofolio Lovember Moments di Instagram"
                     class="footer-galary-img rounded-circle border border-primary"
                   >
                     <img
-                      src="img/galary-6.jpg"
+                      src="img/basic%20Pose/624051938_18108208627737848_7067305896678574710_n.jpg"
                       class="img-fluid rounded-circle p-2"
-                      alt=""
+                      alt="Portofolio basic pose kain putih"
                     />
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -1413,6 +1767,127 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.getElementById("localSearchInput");
+        const resultsContainer = document.getElementById("localSearchResults");
+        const searchModal = document.getElementById("searchModal");
+
+        if (!searchInput || !resultsContainer || !searchModal) {
+          return;
+        }
+
+        const searchableSections = Array.from(
+          document.querySelectorAll(
+            "main section[id], .container-fluid[id], section[id]"
+          )
+        ).filter((section) => section.id && section.textContent.trim().length > 0);
+
+        const searchIndex = searchableSections.map((section) => {
+          const heading = section.querySelector(
+            "h1, h2, h3, h4, h5, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6"
+          );
+          const title = (heading ? heading.textContent : section.id)
+            .replace(/\s+/g, " ")
+            .trim();
+          const bodyText = section.textContent.replace(/\s+/g, " ").trim();
+
+          return {
+            id: section.id,
+            title,
+            bodyText,
+          };
+        });
+
+        const modal = bootstrap.Modal.getOrCreateInstance(searchModal);
+
+        function scrollToSection(id) {
+          const target = document.getElementById(id);
+          if (!target) {
+            return;
+          }
+
+          const navHeight = document.querySelector(".navbar")
+            ? document.querySelector(".navbar").offsetHeight
+            : 0;
+          const offsetTop = target.getBoundingClientRect().top + window.scrollY - navHeight - 16;
+
+          window.scrollTo({ top: Math.max(offsetTop, 0), behavior: "smooth" });
+        }
+
+        function renderResults(query) {
+          const normalizedQuery = query.trim().toLowerCase();
+
+          if (!normalizedQuery) {
+            resultsContainer.innerHTML =
+              '<div class="local-search-empty text-center py-4">Ketik kata kunci untuk mencari bagian di halaman ini.</div>';
+            return;
+          }
+
+          const matches = searchIndex.filter((entry) => {
+            return (
+              entry.title.toLowerCase().includes(normalizedQuery) ||
+              entry.bodyText.toLowerCase().includes(normalizedQuery)
+            );
+          });
+
+          if (!matches.length) {
+            resultsContainer.innerHTML =
+              '<div class="local-search-empty text-center py-4">Tidak ada hasil yang cocok di halaman ini.</div>';
+            return;
+          }
+
+          const items = matches.slice(0, 6).map((entry) => {
+            const snippetStart = Math.max(
+              entry.bodyText.toLowerCase().indexOf(normalizedQuery) - 40,
+              0
+            );
+            const snippetEnd = Math.min(snippetStart + 140, entry.bodyText.length);
+            const snippet = entry.bodyText.slice(snippetStart, snippetEnd).replace(/\s+/g, " ");
+
+            return `
+              <button type="button" class="list-group-item list-group-item-action py-3 px-4" data-target-id="${entry.id}">
+                <div class="fw-bold text-dark mb-1">${entry.title}</div>
+                <small class="text-muted">${snippet}${snippetEnd < entry.bodyText.length ? "..." : ""}</small>
+              </button>
+            `;
+          });
+
+          resultsContainer.innerHTML = `<div class="list-group shadow-sm">${items.join("")}</div>`;
+
+          resultsContainer.querySelectorAll("[data-target-id]").forEach((button) => {
+            button.addEventListener("click", function () {
+              modal.hide();
+              scrollToSection(this.dataset.targetId);
+            });
+          });
+        }
+
+        searchInput.addEventListener("input", function () {
+          renderResults(this.value);
+        });
+
+        searchModal.addEventListener("shown.bs.modal", function () {
+          searchInput.focus();
+          renderResults(searchInput.value);
+        });
+
+        searchModal.addEventListener("hidden.bs.modal", function () {
+          searchInput.value = "";
+          resultsContainer.innerHTML = "";
+        });
+
+        searchInput.addEventListener("keydown", function (event) {
+          if (event.key === "Enter") {
+            const firstResult = resultsContainer.querySelector("[data-target-id]");
+            if (firstResult) {
+              firstResult.click();
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>
 

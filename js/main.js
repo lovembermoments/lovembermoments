@@ -59,5 +59,30 @@
         }
     });
 
+    var $feedbackDeck = $(".testimonial-feedback-deck");
+    if ($feedbackDeck.length && $feedbackDeck.children().length > 3) {
+        $feedbackDeck.addClass("owl-carousel");
+        $feedbackDeck.owlCarousel({
+            autoplay: true,
+            smartSpeed: 1200,
+            dots: true,
+            nav: false,
+            loop: true,
+            margin: 12,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                768: {
+                    items: 2
+                },
+                1200: {
+                    items: 3
+                }
+            }
+        });
+    }
+
 })(jQuery);
 

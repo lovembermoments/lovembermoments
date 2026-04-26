@@ -2,21 +2,17 @@
 <html lang="id">
   <head>
     <meta charset="utf-8" />
-    <title>Lovember Moments | Alur Home Visit</title>
+    <title>Lovember Moments | FAQ Newborn Session</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
-    <meta content="Lihat alur sesi home visit newborn photography Lovember Moments dari konsultasi, pemotretan, hingga hasil akhir." name="description" />
+    <meta
+      content="FAQ Lovember Moments: usia ideal newborn, kondisi bayi, request tema, dan informasi sesi foto yang perlu Bunda ketahui."
+      name="description"
+    />
     <link href="img/icon Lovember.png" rel="icon" type="image/png" />
 
-    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Montserrat:wght@200;400;600&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Icon Font Stylesheet -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -26,29 +22,218 @@
       rel="stylesheet"
     />
 
-    <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet" />
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
 
-    <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+
+    <style>
+      :root {
+         --faq-panel: rgba(var(--brand-primary-rgb), 0.08);
+         --faq-panel-soft: rgba(var(--brand-primary-rgb), 0.12);
+         --faq-panel-border: rgba(var(--brand-primary-rgb), 0.32);
+         --faq-ink: var(--bs-dark);
+      }
+
+      .faq-page {
+        background: var(--brand-surface);
+      }
+
+      .faq-page .page-header {
+         background: linear-gradient(
+            rgba(0, 0, 0, 0.48),
+            rgba(0, 0, 0, 0.08)
+          ),
+          url("img/hero-img.jpg");
+         background-position: center center;
+         background-repeat: no-repeat;
+         background-size: cover;
+      }
+
+      .faq-shell {
+         padding: 4rem 0 5.5rem;
+      }
+
+      .faq-panel {
+        width: min(1240px, 92vw);
+        margin: 0 auto;
+         background: var(--faq-panel);
+         color: var(--faq-ink);
+        padding: clamp(1.4rem, 3vw, 2.5rem);
+         border: 1px solid var(--faq-panel-border);
+         box-shadow: 0 18px 40px rgba(var(--brand-dark-rgb), 0.08);
+      }
+
+      .faq-panel-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        gap: clamp(1.25rem, 2.8vw, 2rem);
+        align-items: start;
+      }
+
+      .faq-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-bottom: 1rem;
+        padding: 0.35rem 0.8rem;
+        border-radius: 999px;
+          background: rgba(var(--brand-primary-rgb), 0.12);
+          color: var(--bs-dark);
+        font-size: 0.82rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+          border: 1px solid var(--faq-panel-border);
+      }
+
+      .faq-kicker i {
+        color: var(--bs-primary);
+      }
+
+      .faq-title {
+        margin-bottom: 0.9rem;
+          color: var(--bs-dark);
+        font-size: clamp(2.7rem, 4.7vw, 4.6rem);
+        line-height: 0.96;
+        max-width: 9ch;
+      }
+
+      .faq-title .accent {
+          color: var(--bs-primary);
+      }
+
+      .faq-lead {
+        max-width: 33rem;
+        margin-bottom: 1.5rem;
+          color: var(--brand-text);
+        line-height: 1.75;
+      }
+
+      .faq-support {
+        margin-top: 2rem;
+        max-width: 30rem;
+        padding: 1.4rem;
+          border: 1px solid var(--faq-panel-border);
+        background: var(--faq-panel-soft);
+      }
+
+      .faq-support h3 {
+        margin-bottom: 0.85rem;
+          color: var(--bs-dark);
+        font-size: 1.5rem;
+      }
+
+      .faq-support p {
+        margin-bottom: 1.15rem;
+          color: var(--brand-text);
+        line-height: 1.75;
+      }
+
+      .faq-support .btn {
+        min-width: 165px;
+      }
+
+      .faq-accordion {
+        display: grid;
+        gap: 0.85rem;
+      }
+
+      .faq-item-card {
+         border: 1px solid var(--faq-panel-border);
+         background: rgba(255, 255, 255, 0.28);
+      }
+
+      .faq-item-card .accordion-button {
+        background: transparent;
+         color: var(--bs-dark);
+        box-shadow: none;
+        font-weight: 700;
+        font-size: 1.15rem;
+        padding: 1.15rem 1.15rem;
+      }
+
+      .faq-item-card .accordion-button:not(.collapsed) {
+         background: rgba(var(--brand-primary-rgb), 0.08);
+         color: var(--bs-dark);
+      }
+
+      .faq-item-card .accordion-button::after {
+        width: 0.95rem;
+        height: 0.95rem;
+        background-size: 0.95rem;
+        filter: brightness(0) invert(1);
+      }
+
+      .faq-item-card .accordion-body {
+        padding: 0 1.15rem 1.15rem;
+          color: var(--brand-text);
+        line-height: 1.72;
+      }
+
+      .faq-image-card {
+        margin-top: 1rem;
+        border-radius: 20px;
+        overflow: hidden;
+         border: 1px solid var(--faq-panel-border);
+         background: rgba(255, 255, 255, 0.45);
+      }
+
+      .faq-image-card img {
+        width: 100%;
+        display: block;
+        height: 220px;
+        object-fit: cover;
+      }
+
+      .faq-image-card .caption {
+        padding: 0.85rem 1rem 1rem;
+          color: var(--brand-text);
+        font-size: 0.95rem;
+      }
+        
+        .faq-page .breadcrumb-item,
+        .faq-page .breadcrumb-item a {
+          color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .faq-page .breadcrumb-item + .breadcrumb-item::before {
+          color: rgba(255, 255, 255, 0.75);
+        }
+        
+        .faq-page .breadcrumb-item.text-white {
+          color: rgba(255, 255, 255, 0.92) !important;
+        }
+
+      @media (max-width: 991.98px) {
+        .faq-panel-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .faq-title {
+          max-width: none;
+        }
+
+        .faq-image-card img {
+          height: 180px;
+        }
+
+        .faq-item-card .accordion-button {
+          font-size: 1.05rem;
+        }
+      }
+    </style>
   </head>
 
-  <body>
-    <!-- Spinner Start -->
+  <body class="faq-page">
     <div
       id="spinner"
       class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50 d-flex align-items-center justify-content-center"
     >
       <div class="spinner-grow text-primary" role="status"></div>
     </div>
-    <!-- Spinner End -->
 
-        <!-- Navbar start -->
     <div id="navbar-container"></div>
     <script>
       function setActiveNav() {
@@ -91,9 +276,7 @@
         })
         .catch((error) => console.error("Error loading navbar:", error));
     </script>
-    <!-- Navbar End -->
 
-    <!-- Modal Search Start -->
     <div
       class="modal fade"
       id="searchModal"
@@ -104,9 +287,7 @@
       <div class="modal-dialog modal-fullscreen">
         <div class="modal-content rounded-0">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
-              Cari halaman
-            </h5>
+            <h5 class="modal-title" id="exampleModalLabel">Cari halaman</h5>
             <button
               type="button"
               class="btn-close"
@@ -130,44 +311,130 @@
         </div>
       </div>
     </div>
-    <!-- Modal Search End -->
 
-    <!-- Page Header Start -->
-    <div
-      class="container-fluid page-header py-5 wow fadeIn"
-      data-wow-delay="0.1s"
-    >
+    <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
       <div class="container text-center py-5">
-        <h1 class="display-2 text-white mb-4">Alur Home Visit</h1>
+          <h1 class="display-2 text-white mb-3">Frequently Asked Questions</h1>
+          <p class="text-white mb-4 fs-5" style="max-width: 720px; margin: 0 auto">
+            Informasi penting tentang usia ideal, booking, dan sesi newborn Lovember Moments.
+          </p>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-center mb-0">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item text-white" aria-current="page">
-              Alur Home Visit
-            </li>
+            <li class="breadcrumb-item text-white" aria-current="page">FAQ</li>
           </ol>
         </nav>
       </div>
     </div>
-    <!-- Page Header End -->
 
-        <!-- Events Start -->
-    <div class="container-fluid events py-5 bg-light" id="alur-home-visit">
-      <div class="container py-5">
-        <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 700px">
-          <h4 class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius">Alur Home Visit</h4>
-          <h1 class="mb-5 display-3">Sesi dibuat nyaman, fleksibel, dan menyesuaikan kebutuhan keluarga</h1>
-        </div>
-        <div class="row g-5 justify-content-center">
-          <div class="col-md-6 col-lg-6 col-xl-4 wow fadeIn" data-wow-delay="0.1s"><div class="events-item bg-primary rounded"><div class="events-inner position-relative"><div class="events-img overflow-hidden rounded-circle position-relative"><img src="img/profile/WhatsApp%20Image%202026-04-24%20at%2013.11.40.jpeg" class="img-fluid w-100 rounded-circle" alt="Konsultasi dan persiapan tema melalui WhatsApp dengan Lovember Moments" /><div class="event-overlay"><a href="img/profile/WhatsApp%20Image%202026-04-24%20at%2013.11.40.jpeg" data-lightbox="event-1"><i class="fas fa-search-plus text-white fa-2x"></i></a></div></div><div class="px-4 py-2 bg-secondary text-white text-center events-rate">Tahap 1</div><div class="d-flex justify-content-between px-4 py-2 bg-secondary"><small class="text-white"><i class="fas fa-clock me-1 text-primary"></i> 1-3 jam</small><small class="text-white"><i class="fas fa-map-marker-alt me-1 text-primary"></i> Home Visit</small></div></div><div class="events-text p-4 border border-primary bg-white border-top-0 rounded-bottom"><a href="program.html" class="h4">Konsultasi dan persiapan tema</a><p class="mb-0 mt-3">Sebelum sesi dimulai, keluarga dapat memilih paket, jumlah set up tema, serta berkonsultasi langsung agar konsep foto sesuai dengan kebutuhan bayi.</p></div></div></div>
-          <div class="col-md-6 col-lg-6 col-xl-4 wow fadeIn" data-wow-delay="0.3s"><div class="events-item bg-primary rounded"><div class="events-inner position-relative"><div class="events-img overflow-hidden rounded-circle position-relative"><img src="img/profile/WhatsApp%20Image%202026-04-24%20at%2013.15.48.jpeg" class="img-fluid w-100 rounded-circle" alt="Sesi foto di rumah yang nyaman bersama Lovember Moments" /><div class="event-overlay"><a href="img/profile/WhatsApp%20Image%202026-04-24%20at%2013.15.48.jpeg" data-lightbox="event-1"><i class="fas fa-search-plus text-white fa-2x"></i></a></div></div><div class="px-4 py-2 bg-secondary text-white text-center events-rate">Tahap 2</div><div class="d-flex justify-content-between px-4 py-2 bg-secondary"><small class="text-white"><i class="fas fa-shield-alt me-1 text-primary"></i> Aman & Nyaman</small><small class="text-white"><i class="fas fa-user-nurse me-1 text-primary"></i> Konsultasi Bidan</small></div></div><div class="events-text p-4 border border-primary bg-white border-top-0 rounded-bottom"><a href="service.html" class="h4">Sesi foto di rumah yang nyaman</a><p class="mb-0 mt-3">Seluruh proses dilakukan dengan penuh kehati-hatian, dengan penataan pose dan properti yang lembut agar bayi tetap tenang dan keluarga bisa ikut menikmati momen pemotretan.</p></div></div></div>
-          <div class="col-md-6 col-lg-6 col-xl-4 wow fadeIn" data-wow-delay="0.5s"><div class="events-item bg-primary rounded"><div class="events-inner position-relative"><div class="events-img overflow-hidden rounded-circle position-relative"><img src="img/profile/WhatsApp%20Image%202026-04-24%20at%2013.16.47.jpeg" class="img-fluid w-100 rounded-circle" alt="Editing dan pengiriman hasil oleh Lovember Moments" /><div class="event-overlay"><a href="img/profile/WhatsApp%20Image%202026-04-24%20at%2013.16.47.jpeg" data-lightbox="event-1"><i class="fas fa-search-plus text-white fa-2x"></i></a></div></div><div class="px-4 py-2 bg-secondary text-white text-center events-rate">Tahap 3</div><div class="d-flex justify-content-between px-4 py-2 bg-secondary"><small class="text-white"><i class="fas fa-image me-1 text-primary"></i> 10-20 file edit</small><small class="text-white"><i class="fas fa-cloud-upload-alt me-1 text-primary"></i> Drive atau Flashdisk</small></div></div><div class="events-text p-4 border border-primary bg-white border-top-0 rounded-bottom"><a href="testimonial.html" class="h4">Editing dan pengiriman hasil</a><p class="mb-0 mt-3">Hasil foto akan diedit profesional lalu dikirim sesuai paket, baik melalui Google Drive maupun flashdisk, lengkap dengan cetakan bila termasuk dalam pilihan layanan.</p></div></div></div>
+    <main class="faq-shell">
+      <div class="faq-panel wow fadeInUp" data-wow-delay="0.15s">
+        <div class="faq-panel-grid">
+          <div>
+            <div class="faq-kicker">
+             <i class="fas fa-heart"></i>
+             <span>Lovember Tips</span>
+            </div>
+
+            <h2 class="faq-title">
+             Frequently<br />Asked <span class="accent">Questions</span>
+            </h2>
+
+            <p class="faq-lead">
+             Informasi singkat untuk membantu Bunda memahami alur sesi, usia ideal,
+             dan cara booking sebelum datang ke Lovember Moments.
+            </p>
+
+            <div class="faq-support">
+              <h3>Still Have Questions?</h3>
+              <p>
+                Kalau masih ingin tanya detail paket, tema, atau ketersediaan jadwal,
+                admin kami siap bantu lewat WhatsApp.
+              </p>
+              <a
+                href="https://wa.me/6285161072411?text=Assalamualaikum%20Bu%20Bidan%20Puput.%20Perkenalkan%2C%20saya%20%5BNama%20Anda%5D.%20Saya%20ingin%20berkonsultasi%20mengenai%20FAQ%20Lovember%20Moments."
+                class="btn btn-primary rounded-pill px-4 py-2 me-2 mb-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Chat Admin
+              </a>
+              <a
+                href="https://instagram.com/lovember.moments"
+                class="btn btn-outline-primary rounded-pill px-4 py-2 mb-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <div class="accordion faq-accordion" id="faqAccordion">
+              <div class="accordion-item faq-item-card">
+                <h2 class="accordion-header" id="faqHeadingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
+                      What is Lovember Moments?
+                  </button>
+                </h2>
+                <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Lovember Moments adalah layanan home visit newborn photography yang
+                    fokus pada kenyamanan bayi dan keluarga.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item faq-item-card">
+                <h2 class="accordion-header" id="faqHeadingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+                    How does booking work?
+                  </button>
+                </h2>
+                <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Bunda cukup chat admin lewat WhatsApp atau klik link bio Instagram.
+                    Kami akan bantu pilih paket, tema, dan jadwal yang sesuai.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item faq-item-card">
+                <h2 class="accordion-header" id="faqHeadingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
+                    Can I cancel anytime?
+                  </button>
+                </h2>
+                <div id="faqCollapseFour" class="accordion-collapse collapse" aria-labelledby="faqHeadingFour" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Jika jadwal berubah, Bunda bisa menghubungi admin untuk reschedule
+                    sesuai ketersediaan slot dan kondisi bayi.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item faq-item-card">
+                <h2 class="accordion-header" id="faqHeadingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFive" aria-expanded="false" aria-controls="faqCollapseFive">
+                    Usia ideal newborn?
+                  </button>
+                </h2>
+                <div id="faqCollapseFive" class="accordion-collapse collapse" aria-labelledby="faqHeadingFive" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Usia ideal foto newborn adalah 5-15 hari, karena pada rentang ini bayi
+                    masih lebih nyaman untuk diatur posisinya.
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- Events End-->
+    </main>
 
-        <!-- Footer Start -->
+    <!-- Footer Start -->
     <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.1s">
       <div class="container py-5">
         <div class="row g-5">
@@ -185,6 +452,25 @@
                 mengutamakan keamanan, kenyamanan, dan hasil berkualitas untuk
                 keluarga yang ingin sesi home visit hangat di rumah.
               </p>
+              <div class="border border-primary p-3 rounded bg-light">
+                <h5 class="mb-3">Konsultasi Sesi</h5>
+                <div
+                  class="position-relative mx-auto border border-primary rounded"
+                  style="max-width: 400px"
+                >
+                  <input
+                    class="form-control border-0 w-100 py-3 ps-4 pe-5"
+                    type="text"
+                    placeholder="Email atau nomor WhatsApp"
+                  />
+                  <button
+                    type="button"
+                    class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2 text-white"
+                  >
+                    Kirim
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 col-xl-3">
@@ -378,9 +664,6 @@
             </span>
           </div>
           <div class="col-md-6 my-auto text-center text-md-end text-white">
-            <!--/*** This template is free as long as you keep the below authorâ€™s credit link/attribution link/backlink. ***/-->
-            <!--/*** If you'd like to use the template without the below authorâ€™s credit link/attribution link/backlink, ***/-->
-            <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
             Lovember Moments | Home visit newborn photography yang hangat,
             aman, dan nyaman.
           </div>
@@ -389,14 +672,10 @@
     </div>
     <!-- Copyright End -->
 
-    <!-- Back to Top -->
-    <a
-      href="#"
-      class="btn btn-primary border-3 border-primary rounded-circle back-to-top"
+    <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"
       ><i class="fa fa-arrow-up"></i
     ></a>
 
-    <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
@@ -404,9 +683,6 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
   </body>
 </html>
-
